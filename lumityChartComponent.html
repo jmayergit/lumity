@@ -4,8 +4,17 @@
 
   Object.defineProperty(BarMarkerProto, "dollar-amount", {value: 0});
 
+  // temporary to give styling
+  Object.defineProperty(BarMarkerProto, "class", {value: "marker"})
+
   BarMarkerProto.attributeChangeCallback = function(attr, oldVal, newVal) {
     // update margin-left
+    console.log('bar-marker attr change callback');
+    this.style.marginLeft = (Math.ceil((newVal / 6350) * 100)).toString() + "%";
   };
-}();)
+
+  document.registerElement('bar-marker', {
+    prototype: BarMarkerProto
+  });
+}());
 </script>
