@@ -1,0 +1,11 @@
+<script>
+(function() {
+  var BarMarkerProto = Object.create(HTMLElement.prototype);
+
+  Object.defineProperty(BarMarkerProto, "dollar-amount", {value: 0});
+
+  BarMarkerProto.attributeChangeCallback = function(attr, oldVal, newVal) {
+    // update margin-left
+  };
+}();)
+</script>
